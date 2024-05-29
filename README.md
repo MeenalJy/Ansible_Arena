@@ -1,6 +1,4 @@
-# README.md
-
-## Ansible Arena Repository
+### Ansible Arena Repository
 
 Welcome to the Ansible Arena Repository! This repository is dedicated to hosting various Ansible projects, providing configurations, playbooks, and roles for automating and managing IT infrastructure. 
 
