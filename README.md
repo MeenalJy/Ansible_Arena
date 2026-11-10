@@ -123,3 +123,7 @@ Happy Automating! 🚀
 ---
 
 Feel free to contribute and improve the repository by submitting pull requests or raising issues.
+
+## Reusable Nginx role
+
+Explore the [Nginx lab role](roles/nginx/README.md) for a Debian/Ubuntu VM exercise covering package installation, templating, service management and idempotence testing. Run it with the [example playbook](nginx-lab.yml) on a disposable VM, not a production host.
