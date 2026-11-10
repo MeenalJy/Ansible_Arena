@@ -27,3 +27,21 @@
     name: nginx
     state: started
     enabled: true
+
+- name: Verify Nginx serves the configured page
+  ansible.builtin.uri:
+    url: http://127.0.0.1/
+    status_code: 200
+    return_content: true
+  register: nginx_http_response
+  retries: 5
+  delay: 2
+  until: nginx_http_response.status == 200
+  when: not ansible_check_mode
+
+- name: Verify expected page title
+  ansible.builtin.assert:
+    that:
+      - (nginx_page_title | e) in nginx_http_response.content
+    fail_msg: Nginx responded but the expected page title was not found.
+  when: not ansible_check_mode
